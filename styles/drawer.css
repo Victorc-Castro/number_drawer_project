@@ -9,12 +9,33 @@ section#drawer {
   & div > p {
     font: var(--paragraph-medium);
     color: var(--content-tertiary);
+    width: 20rem;
+
+    border: 1px solid darkblue;
+  }
+
+  & form {
+    margin-top: 40px;
+
+    border: 1px saddlebrown solid;
   }
 
   & div.num-input {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid red;
+  }
+
+  & div.num-input label {
+    font: var(--label-medium);
+    color: var(--content-secondary);
+  }
+}
+
+@media (width >= 80em) {
+  section#drawer {
+    & #drawer-explanation {
+      width: 26.5rem;
+    }
   }
 }

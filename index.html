@@ -28,11 +28,12 @@
 
       <div>
         <h2>Quero sortear:</h2>
-        <p>Defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É rápido e fácil!</p>
+        <p id="drawer-explanation">Defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É rápido e fácil!</p>
       </div>
 
       <div>
-        <form enctype="multipart/form-data" class="container" id="form">
+        <form enctype="multipart/form-data" class="flex gap-75" id="form">
+
           <div class="num-input">
             <label for="num-1">Números</label>
             <input 
@@ -42,6 +43,29 @@
               required
             >
           </div>
+
+
+          <div class="num-input">
+            <label for="num-2">De</label>
+            <input 
+              type="text"
+              name="num-2"
+              id="num-2"
+              required
+            >
+          </div>
+
+          <div class="num-input">
+            <label for="num-3">De</label>
+            <input 
+              type="text"
+              name="num-3"
+              id="num-3"
+              required
+            >
+          </div>
+
+
         </form>
       </div>
 

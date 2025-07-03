@@ -16,6 +16,14 @@
   align-items: center;
 }
 
+.gap {
+  gap: 1rem;
+}
+
+.gap-75 {
+  gap: 0.75rem;
+}
+
 @media (width >= 80em) {
   .container {
     --max-width: 1366px;
