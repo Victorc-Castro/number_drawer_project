@@ -63,3 +63,9 @@
 body {
   background-color: slategray;
 }
+
+input {
+  width: 86px;
+  height: 56px;
+  background-color: var(--background-secondary);
+}

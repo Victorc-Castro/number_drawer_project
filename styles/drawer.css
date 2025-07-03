@@ -10,4 +10,11 @@ section#drawer {
     font: var(--paragraph-medium);
     color: var(--content-tertiary);
   }
+
+  & div.num-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid red;
+  }
 }
