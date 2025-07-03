@@ -67,5 +67,8 @@ body {
 input {
   width: 86px;
   height: 56px;
-  /* background-color: var(--background-secondary); */
+  background-color: var(--background-secondary);
+  color: var(--content-primary);
+  font: var(--display-small);
+  text-align: center;
 }
