@@ -1,0 +1,34 @@
+section#apresentation {
+  & p {
+    font: var(--overline);
+    text-transform: uppercase;
+    background-clip: text;
+    background: var(--gradient-content);
+    margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  & h1 {
+    font: var(--display-medium);
+    color: var(--content-primary);
+    width: 16rem;
+    border: 1px solid rebeccapurple;
+  }
+}
+
+@media(width >= 80em) {
+  section#apresentation {
+    & p {
+      margin-top: 3rem;
+    }
+
+    & h1 {
+      font: var(--display-large);
+      width: 28rem;
+      border: 1px solid rebeccapurple;
+    }
+  }
+}
