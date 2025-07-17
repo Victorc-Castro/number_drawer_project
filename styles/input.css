@@ -1,0 +1,15 @@
+input {
+  width: 86px;
+  height: 56px;
+  background-color: var(--background-secondary);
+  color: var(--content-primary);
+  font: var(--display-small);
+  text-align: center;
+  border-radius: 8px;
+  border: var(--background-secondary);
+}
+
+input::placeholder {
+  font: var(--display-small);
+  font-size: 1.25rem;  
+}

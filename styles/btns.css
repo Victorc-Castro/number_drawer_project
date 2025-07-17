@@ -7,7 +7,6 @@ input[type="checkbox"] {
   position: absolute;
   cursor: pointer;
   transition: 0.3s;
-  /* bottom: 400px; */
 }
 
 input[type="checkbox"]::before {
@@ -71,6 +70,7 @@ button#btnResult {
   background-color: var(--background-tertiary);
   color: #ffffff;
   text-transform: uppercase;
+  border: var(--background-secondary);
 }
 
 div#result {
