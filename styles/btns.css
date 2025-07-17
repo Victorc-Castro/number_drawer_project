@@ -1,7 +1,7 @@
 input[type="checkbox"] {
   appearance: none;
-  width: 30px;
-  height: 20px;
+  width: 1.875rem;
+  height: 1.25rem;
   border-radius: 1rem;
   background-color: var(--content-tertiary);
   position: absolute;
@@ -12,8 +12,8 @@ input[type="checkbox"] {
 input[type="checkbox"]::before {
   content: "";
   position: absolute;
-  width: 14px;
-  height: 14px;
+  width: 0.875rem;
+  height: 0.875rem;
   background-color: var(--content-primary);
   border-radius: 50%;
   top: 50%;
@@ -36,7 +36,7 @@ input[type="checkbox"]:checked {
 }
 
 input[type="checkbox"]:checked:before {
-  left: 20px;
+  left: 1.25rem;
 }
 
 input[type="checkbox"]:checked::after {
@@ -47,7 +47,7 @@ input[type="checkbox"]:checked::after {
 div.switchBtn {
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 1.25rem;
 
   & #noRepeat {
     font: var(--paragraph-medium);
@@ -58,10 +58,10 @@ div.switchBtn {
 }
 
 button#btnResult {
-  width: 319px;
-  height: 56px;
+  width: 19.9375rem;
+  height: 3.5rem;
   border-radius: 8px;
-  margin-top: 40px;
+  margin-top: 2.5rem;
   padding: 1rem;
   display: flex;
   justify-content: center;
@@ -85,6 +85,34 @@ img#drawAgain {
 
 @media (width >= 80em) {
   button#btnResult {
-    width: 482px;
+    width: 26.875rem;
   }
+
+  .border-btn {
+    position: relative;
+    display: inline-block;
+    border-radius: 8px;
+  }
+
+  #btnResult {
+    position: relative;
+  }
+
+  .border-btn::after {
+    content: "";
+    position: absolute;
+    top: 2.375rem;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: 3.75rem;
+    background: var(--gradient-border);
+    border-radius: 8px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .border-btn:hover::after {
+    opacity: 1;
+  } 
 }
