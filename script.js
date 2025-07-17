@@ -1,8 +1,8 @@
 // select the elements.
 const input = document.querySelectorAll(".numbers-only")
 const num1 = document.querySelector("#num-1")
-const num2 = document.querySelector("#num-2")
-const num3 = document.querySelector("#num-3")
+const num2 = document.querySelector("#num-2") // Min value
+const num3 = document.querySelector("#num-3") // Max value
 
 // formatting inputs to accept only numbers.
 input.forEach((input) => {
@@ -69,50 +69,37 @@ num3.addEventListener('input', () => {
   num3.value = numValue3 
 })
 
-function validateRange() {
-  try {
-    const minValue = num2.value.trim()
-    const maxValue = num3.value.trim()
+function validatedMinMax() {
+  let minStr = parseInt(num2.value, 10)
+  let maxStr = parseInt(num3.value, 10)
 
-    if (minValue === '' || maxValue === '') {
-      throw new Error('Preencha os dois valores do intervalo.')
-    }
-
-    const min = parseInt(minValue, 10)
-    const max = parseInt(maxValue, 10)
-
-    if (isNaN(min) || isNaN(max)) {
-      throw new Error('Digite apenas números no intervalo.')
-    }
-
-    if (min >= max) {
-      throw new Error('O valor mínimo deve ser menor que o máximo.')
-    }
-
-    return { min, max }
-  }catch (erro) {
-    alert(erro.message)
-    return null
+  if (minStr === '' || maxStr === '') {
+    return;
   }
-} 
 
-function validateQuantity() {
-  try {
-    const value = num1.value.trim()
+  let min = parseInt(minStr, 10);
+  let max = parseInt(maxStr, 10);
 
-    if(value === '') {
-      throw new Error('Digite a quantidade de números a sortear')
-    }
-
-    const number = parseInt(value, 10)
-
-    if(isNaN(number)) {
-      throw new Error('A quantidade deve estar entre 1 e 3')
-    }
-
-    return number
-  }catch(erro) {
-    alert(erro.message)
-    return null
+  if (isNaN(min) || isNaN(max)) {
+    return
   }
+
+  // Ensures values stay within range [1, 100]
+  min = Math.min(Math.max(min, 1), 100)
+  max = Math.min(Math.max(max, 1), 100)
+
+  // If minimum is greater than or equal to maximum, adjust maximum to be min + 1
+  if (min >= max) {
+    max = min + 1
+    if (max > 100) {
+      max = 100
+      min = max -1
+    }
+  }
+
+  num2.value = min
+  num3.value = max
 }
+
+num2.addEventListener('input', validatedMinMax())
+num3.addEventListener('input', validatedMinMax())

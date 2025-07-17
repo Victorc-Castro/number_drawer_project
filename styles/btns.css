@@ -1,0 +1,13 @@
+button#btn {
+  width: 319px;
+  height: 56px;
+  border-radius: 8px;
+  margin-top: 40px;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: var(--label-medium);
+  background-color: var(--background-tertiary);
+  color: #ffffff;
+}

@@ -16,6 +16,7 @@ section#drawer {
 
   & form {
     margin-top: 40px;
+    flex-wrap: wrap;
 
     border: 1px saddlebrown solid;
   }
@@ -37,5 +38,12 @@ section#drawer {
     & #drawer-explanation {
       width: 26.5rem;
     }
+
+    & form {
+    margin-top: 40px;
+    max-width: 21rem;
+
+    border: 1px saddlebrown solid;
+  }
   }
 }
