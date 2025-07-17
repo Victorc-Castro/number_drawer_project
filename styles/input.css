@@ -6,10 +6,46 @@ input {
   font: var(--display-small);
   text-align: center;
   border-radius: 8px;
-  border: var(--background-secondary);
+  border: none;
 }
 
 input::placeholder {
   font: var(--display-small);
   font-size: 1.25rem;  
 }
+
+.border {
+  position: relative;
+  display: inline-block;
+  border-radius: 8px;
+}
+
+.numbers-only {
+  position: relative;
+}
+
+.numbers-only:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.border::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  background: var(--gradient-border);
+  border-radius: 8px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.border:hover::after,
+.border:focus-within::after {
+  opacity: 1;
+}
+
