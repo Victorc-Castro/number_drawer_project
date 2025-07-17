@@ -95,3 +95,24 @@ function validateRange() {
     return null
   }
 } 
+
+function validateQuantity() {
+  try {
+    const value = num1.value.trim()
+
+    if(value === '') {
+      throw new Error('Digite a quantidade de números a sortear')
+    }
+
+    const number = parseInt(value, 10)
+
+    if(isNaN(number)) {
+      throw new Error('A quantidade deve estar entre 1 e 3')
+    }
+
+    return number
+  }catch(erro) {
+    alert(erro.message)
+    return null
+  }
+}
