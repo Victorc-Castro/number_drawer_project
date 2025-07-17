@@ -11,3 +11,9 @@ button#btn {
   background-color: var(--background-tertiary);
   color: #ffffff;
 }
+
+div#result {
+  width: 5rem;
+  height: 5rem;
+  border: 1px solid red;
+}
