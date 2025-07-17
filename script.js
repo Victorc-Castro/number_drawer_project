@@ -1,10 +1,12 @@
 // select the elements.
-const input = document.querySelectorAll(".numbers-only")
-const num1 = document.querySelector("#num-1")
+const input = document.querySelectorAll(".numbers-only") // Inputs
+const num1 = document.querySelector("#num-1") // Amount
 const num2 = document.querySelector("#num-2") // Min value
 const num3 = document.querySelector("#num-3") // Max value
-const btnResult = document.querySelector("#btnResult")
-const result = document.querySelector("#result")
+const btnSwitch = document.querySelector("#switch") // Switch Button
+const btnResult = document.querySelector("#btnResult") // Result Button
+const result = document.querySelector("#result") // Result
+
 
 // formatting inputs to accept only numbers.
 input.forEach((input) => {
@@ -112,6 +114,7 @@ btnResult.addEventListener('click', (d) => {
   const amount = parseInt(num1.value, 10)
   const min = parseInt(num2.value, 10)
   const max = parseInt(num3.value, 10)
+  const noRepetition = btnSwitch.checked
 
   // Basic verification
   if (isNaN(amount) || isNaN(min) || isNaN(max)) {
@@ -121,6 +124,13 @@ btnResult.addEventListener('click', (d) => {
 
   if( min >= max) {
     alert('O valor mínimo deve ser menor que o máximo.')
+    return
+  }
+
+  const range = max - min + 1
+
+  if (noRepetition && amount > range) {
+    alert('Não é possível sortear essa quantidade sem repetir com esse intervalo.')
     return
   }
 
@@ -135,17 +145,24 @@ btnResult.addEventListener('click', (d) => {
   }
 
   // Draw
-  const numbers = new Set()
+  let drawn = noRepetition ? new Set() : []
 
-  while (numbers.size < amount) {
-    const n = Math.floor(Math.random() * (max - min + 1)) + min
-    numbers.add(n)
+  while ((noRepetition ? drawn.size : drawn.length) < amount) {
+    const number = Math.floor(Math.random() * range) + min
+
+    if (noRepetition) {
+      drawn.add(number)
+    } else {
+      drawn.push(number)
+    }
   }
+
+  const finalResult = noRepetition ? [...drawn] : drawn
 
   btnResult.innerHTML = `
     Sortear Novamente  
     <img src="./assets/icons/draw_again.svg" id="drawAgain"></img>
   `
 
-  result.textContent = `Números sorteados: ${[...numbers].join(', ')}`
+  result.textContent = `Números sorteados: ${[...finalResult].join(', ')}`
 })
