@@ -3,6 +3,8 @@ const input = document.querySelectorAll(".numbers-only")
 const num1 = document.querySelector("#num-1")
 const num2 = document.querySelector("#num-2") // Min value
 const num3 = document.querySelector("#num-3") // Max value
+const btnResult = document.querySelector("#btnResult")
+const result = document.querySelector("#result")
 
 // formatting inputs to accept only numbers.
 input.forEach((input) => {
@@ -103,3 +105,47 @@ function validatedMinMax() {
 
 num2.addEventListener('input', validatedMinMax())
 num3.addEventListener('input', validatedMinMax())
+
+btnResult.addEventListener('click', (d) => {
+  d.preventDefault()
+
+  const amount = parseInt(num1.value, 10)
+  const min = parseInt(num2.value, 10)
+  const max = parseInt(num3.value, 10)
+
+  // Basic verification
+  if (isNaN(amount) || isNaN(min) || isNaN(max)) {
+    alert('Preencha todos os campos corretamente.')
+    return
+  }
+
+  if( min >= max) {
+    alert('O valor mínimo deve ser menor que o máximo.')
+    return
+  }
+
+  if (amount < 1 || amount > 3) {
+    alert('A quantidade deve estar entre 1 e 3')
+    return
+  }
+
+  if (amount > (max - min + 1)) {
+    alert('Quantidade maior que o intervalo possível')
+    return
+  }
+
+  // Draw
+  const numbers = new Set()
+
+  while (numbers.size < amount) {
+    const n = Math.floor(Math.random() * (max - min + 1)) + min
+    numbers.add(n)
+  }
+
+  btnResult.innerHTML = `
+    Sortear Novamente  
+    <img src="./assets/icons/draw_again.svg" id="drawAgain"></img>
+  `
+
+  result.textContent = `Números sorteados: ${[...numbers].join(', ')}`
+})
