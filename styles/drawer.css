@@ -10,8 +10,6 @@ section#drawer {
     font: var(--paragraph-medium);
     color: var(--content-tertiary);
     width: 20rem;
-
-    border: 1px solid darkblue;
   }
 
   & form {
@@ -40,8 +38,6 @@ section#drawer {
     & form {
       margin-top: 40px;
       max-width: 27rem;
-
-      border: 1px saddlebrown solid;
     }
   }
 }
