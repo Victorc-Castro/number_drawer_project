@@ -164,5 +164,9 @@ btnResult.addEventListener('click', (d) => {
     <img src="./assets/icons/draw_again.svg" id="drawAgain"></img>
   `
 
-  result.textContent = `Números sorteados: ${[...finalResult].join(', ')}`
+  result.innerHTML = `
+  <h1>Resultado do Sorteio</h1>
+  <span>1° Resultado</span>
+  <div>${[...finalResult].join(', ')}</div>
+  ` 
 })

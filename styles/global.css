@@ -61,11 +61,6 @@
 }
 
 body {
-  background-color: var(--background-primary);
-
-
-
-
-
-  /* background-color: slategray; */
+  /* background-color: var(--background-primary); */
+  background-color: slategray;
 }

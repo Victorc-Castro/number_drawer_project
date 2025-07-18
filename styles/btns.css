@@ -73,12 +73,6 @@ button#btnResult {
   border: var(--background-secondary);
 }
 
-div#result {
-  width: 5rem;
-  height: 5rem;
-  border: 1px solid red;
-}
-
 img#drawAgain {
   margin-left: 1rem;
 }
