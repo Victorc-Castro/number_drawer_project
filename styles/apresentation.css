@@ -15,7 +15,6 @@ section#apresentation {
     font: var(--display-medium);
     color: var(--content-primary);
     width: 16rem;
-    border: 1px solid rebeccapurple;
   }
 }
 
@@ -28,7 +27,6 @@ section#apresentation {
     & h1 {
       font: var(--display-large);
       width: 28rem;
-      border: 1px solid rebeccapurple;
     }
   }
 }

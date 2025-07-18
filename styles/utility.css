@@ -24,6 +24,14 @@
   gap: 0.75rem;
 }
 
+.top {
+  margin-top: 2.25rem;
+}
+
+.top-1 {
+  margin-top: 2.375rem;
+}
+
 @media (width >= 80em) {
   .container {
     --max-width: 1366px;
@@ -38,5 +46,9 @@
   .desktop-flex {
     display: flex;
     align-items: center;
+  }
+
+  .mobile-only {
+    display: none;
   }
 }

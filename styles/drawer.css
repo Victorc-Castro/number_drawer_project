@@ -17,8 +17,6 @@ section#drawer {
   & form {
     margin-top: 40px;
     flex-wrap: wrap;
-
-    border: 1px saddlebrown solid;
   }
 
   & div.num-input {
@@ -40,10 +38,10 @@ section#drawer {
     }
 
     & form {
-    margin-top: 40px;
-    max-width: 27rem;
+      margin-top: 40px;
+      max-width: 27rem;
 
-    border: 1px saddlebrown solid;
-  }
+      border: 1px saddlebrown solid;
+    }
   }
 }
