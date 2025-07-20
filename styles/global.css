@@ -60,7 +60,14 @@
   --px-base: 1rem;
 }
 
-body {
-  background-color: slategray;
+
+html {
+  background: url(../assets/imgs/bg-img.svg) no-repeat top center/cover;
   background-color: var(--background-primary);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, var(--background-primary) 50%, rgba(255, 255, 255, 0));
 }
