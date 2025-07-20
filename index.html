@@ -46,79 +46,80 @@
 
     <section class="draw-section container" id="drawer">
 
-      <div>
-        <h2>Quero sortear:</h2>
-        <p id="drawer-explanation">Defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É rápido e fácil!</p>
+      <div id="inputs-hidden">
+
+        <div>
+          <h2>Quero sortear:</h2>
+          <p id="drawer-explanation">Defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É rápido e fácil!</p>
+        </div>
+
+        <div>
+          <form enctype="multipart/form-data" class="flex gap-75" id="form">
+
+            <div class="num-input">
+              <label for="num-1">Números</label>
+              <div class="border">
+                <input 
+                  type="text"
+                  name="num-1"
+                  id="num-1"
+                  class="numbers-only"
+                  placeholder="1 a 3"
+                  required
+                >
+              </div>
+            </div>
+
+
+            <div class="num-input">
+              <label for="num-2">De</label>
+              <div class="border">
+                <input 
+                  type="text"
+                name="num-2"
+                  id="num-2"
+                class="numbers-only"
+                  placeholder="1 a 100"
+                required
+                >
+              </div>
+            </div>
+
+            <div class="num-input">
+              <label for="num-3">De</label>
+              <div class="border">
+                <input 
+                  type="text"
+                  name="num-3"
+                  id="num-3"
+                  class="numbers-only"
+                  placeholder="1 a 100"
+                  required
+                >
+              </div>
+            </div>
+
+            <div class="switchBtn">
+              <input type="checkbox" name="switch" id="switch">
+              <p id="noRepeat">Não repetir número</p>
+            </div>
+
+          </form>
+          
+        </div>
+
       </div>
 
-      <div>
-        <form enctype="multipart/form-data" class="flex gap-75" id="form">
+      <div id="result" class="hidden">
 
-          <div class="num-input">
-            <label for="num-1">Números</label>
-            <div class="border">
-              <input 
-                type="text"
-                name="num-1"
-                id="num-1"
-                class="numbers-only"
-                placeholder="1 a 3"
-                required
-              >
-            </div>
-          </div>
+        <!-- <h1>Resultado do sorteio</h1> -->
+        <!-- <span>1° Resultado</span> -->
+        <!-- <div>5</div> -->
 
+      </div>
 
-          <div class="num-input">
-            <label for="num-2">De</label>
-            <div class="border">
-              <input 
-                type="text"
-               name="num-2"
-                id="num-2"
-               class="numbers-only"
-                placeholder="1 a 100"
-               required
-              >
-            </div>
-          </div>
-
-          <div class="num-input">
-            <label for="num-3">De</label>
-            <div class="border">
-              <input 
-                type="text"
-                name="num-3"
-                id="num-3"
-                class="numbers-only"
-                placeholder="1 a 100"
-                required
-              >
-            </div>
-          </div>
-
-
-
-          <div id="result" class="hidden">
-
-            <h1>Resultado do sorteio</h1>
-            <span>1° Resultado</span>
-            <div>5</div>
-
-          </div>
-
-
-
-          <div class="switchBtn">
-            <input type="checkbox" name="switch" id="switch">
-            <p id="noRepeat">Não repetir número</p>
-          </div>
-
-          <div class="border-btn">
-            <button type="submit" id="btnResult"> Sortear &nbsp; &rarr; </button>
-          </div>
-
-        </form>
+      <div class="border-btn">
+        <button type="submit" id="btnResult"> Sortear &nbsp; &rarr; </button>
       </div>
 
 

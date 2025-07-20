@@ -6,6 +6,10 @@ const num3 = document.querySelector("#num-3") // Max value
 const btnSwitch = document.querySelector("#switch") // Switch Button
 const btnResult = document.querySelector("#btnResult") // Result Button
 const result = document.querySelector("#result") // Result
+const hiddenInputs = document.querySelector("#inputs-hidden")
+
+let drawDone = false
+let drawCount = 0
 
 
 // formatting inputs to accept only numbers.
@@ -109,64 +113,87 @@ num2.addEventListener('input', validatedMinMax())
 num3.addEventListener('input', validatedMinMax())
 
 btnResult.addEventListener('click', (d) => {
-  d.preventDefault()
+  if(!drawDone) {
+    d.preventDefault()
 
-  const amount = parseInt(num1.value, 10)
-  const min = parseInt(num2.value, 10)
-  const max = parseInt(num3.value, 10)
-  const noRepetition = btnSwitch.checked
+    const amount = parseInt(num1.value, 10)
+    const min = parseInt(num2.value, 10)
+    const max = parseInt(num3.value, 10)
+    const noRepetition = btnSwitch.checked
 
-  // Basic verification
-  if (isNaN(amount) || isNaN(min) || isNaN(max)) {
-    alert('Preencha todos os campos corretamente.')
-    return
-  }
-
-  if( min >= max) {
-    alert('O valor mínimo deve ser menor que o máximo.')
-    return
-  }
-
-  const range = max - min + 1
-
-  if (noRepetition && amount > range) {
-    alert('Não é possível sortear essa quantidade sem repetir com esse intervalo.')
-    return
-  }
-
-  if (amount < 1 || amount > 3) {
-    alert('A quantidade deve estar entre 1 e 3')
-    return
-  }
-
-  if (amount > (max - min + 1)) {
-    alert('Quantidade maior que o intervalo possível')
-    return
-  }
-
-  // Draw
-  let drawn = noRepetition ? new Set() : []
-
-  while ((noRepetition ? drawn.size : drawn.length) < amount) {
-    const number = Math.floor(Math.random() * range) + min
-
-    if (noRepetition) {
-      drawn.add(number)
-    } else {
-      drawn.push(number)
+    // Basic verification
+    if (isNaN(amount) || isNaN(min) || isNaN(max)) {
+      alert('Preencha todos os campos corretamente.')
+      return
     }
+
+    if( min >= max) {
+      alert('O valor mínimo deve ser menor que o máximo.')
+      return
+    }
+
+    const range = max - min + 1
+
+    if (noRepetition && amount > range) {
+      alert('Não é possível sortear essa quantidade sem repetir com esse intervalo.')
+      return
+    }
+
+    if (amount < 1 || amount > 3) {
+      alert('A quantidade deve estar entre 1 e 3')
+      return
+    }
+
+    if (amount > (max - min + 1)) {
+      alert('Quantidade maior que o intervalo possível')
+      return
+    }
+
+    // Draw
+    let drawn = noRepetition ? new Set() : []
+
+    while ((noRepetition ? drawn.size : drawn.length) < amount) {
+      const number = Math.floor(Math.random() * range) + min
+
+      if (noRepetition) {
+        drawn.add(number)
+      } else {
+        drawn.push(number)
+      }
+    }
+
+    // Update the draw
+    drawCount++
+
+    // Show result
+    const finalResult = noRepetition ? [...drawn] : drawn
+
+    hiddenInputs.classList.add("hidden")
+    result.classList.remove("hidden")
+
+    btnResult.innerHTML = `
+      Sortear Novamente  
+      <img src="./assets/icons/draw_again.svg" id="drawAgain"></img>
+    `
+
+    result.innerHTML = `
+      <h1>Resultado do Sorteio</h1>
+      <span>${drawCount}° Resultado</span>
+      <div>${[...finalResult].join(' ')}</div>
+    ` 
+    drawDone= true
+
+  } else {
+    num1.value = "";
+    num2.value = "";
+    num3.value = "";
+    btnSwitch.checked = false;
+
+    result.innerHTML = ""
+    result.classList.add("hidden")
+    hiddenInputs.classList.remove("hidden")
+    
+
+    drawDone = false
   }
-
-  const finalResult = noRepetition ? [...drawn] : drawn
-
-  btnResult.innerHTML = `
-    Sortear Novamente  
-    <img src="./assets/icons/draw_again.svg" id="drawAgain"></img>
-  `
-
-  result.innerHTML = `
-  <h1>Resultado do Sorteio</h1>
-  <span>1° Resultado</span>
-  <div>${[...finalResult].join(', ')}</div>
-  ` 
 })
