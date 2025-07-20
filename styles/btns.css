@@ -39,11 +39,6 @@ input[type="checkbox"]:checked:before {
   left: 1.25rem;
 }
 
-input[type="checkbox"]:checked::after {
-  content: "";
-  left: 85px;
-}
-
 div.switchBtn {
   display: flex;
   align-items: center;
