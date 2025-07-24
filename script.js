@@ -117,8 +117,8 @@ btnResult.addEventListener('click', (d) => {
     d.preventDefault()
 
     const amount = parseInt(num1.value, 10)
-    const min = parseInt(num2.value, 10)
-    const max = parseInt(num3.value, 10)
+    let min = parseInt(num2.value, 10)
+    let max = parseInt(num3.value, 10)
     const noRepetition = btnSwitch.checked
 
     // Basic verification
@@ -128,8 +128,10 @@ btnResult.addEventListener('click', (d) => {
     }
 
     if( min >= max) {
-      alert('O valor mínimo deve ser menor que o máximo.')
-      return
+      [min, max] = [max, min]
+
+      num2.value = min.toString()
+      num3.value = max.toString()
     }
 
     const range = max - min + 1
