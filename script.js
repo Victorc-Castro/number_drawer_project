@@ -164,7 +164,7 @@ btnResult.addEventListener('click', (d) => {
       }
     }
 
-    // Update the draw
+    // Update the draw count
     drawCount++
 
     // Show result
