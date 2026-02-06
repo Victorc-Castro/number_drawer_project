@@ -32,5 +32,5 @@ This project was developed using the following technologies:
 - JavaScript
 
 ## 🏷️ Layout
-Você pode visualizar o layout do projeto através [desse link](https://www.figma.com/community/file/1397279380752780744/sorteador-de-numeros).
-É necessário ter uma conta no [Figma](https://www.figma.com).
+You can view the project layout through [this link](https://www.figma.com/community/file/1397279380752780744/sorteador-de-numeros).
+Note: A Figma account is required [Figma](https://www.figma.com).
