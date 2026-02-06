@@ -1,12 +1,14 @@
 <p align="center">
  <img src="./assets/imgs/bg-cover.png" alt="Foto de capa" width="100%" />
-</p>    
+</p>   
 
-## 💻 Projeto
-Esse é um projeto Web responsivo feito com o intuito aperfeiçoar conhecimentos sobre JavaScript, aplicando lógica de programação para fazer um sorteador de números, com possibilidade de escolher o intervalo dos números sorteados, e ainda a possibilidade de haver ou não repetição dos valores.
 
-## 👩‍💻 Tecnologias
-Esse projeto foi desenvolvido usando as seguintes tecnologias:
+
+## 👩‍💻 What I Learned
+
+
+## ⚙️ Technologies Used
+This project was developed using the following technologies:
 
 - HTML
 - CSS
